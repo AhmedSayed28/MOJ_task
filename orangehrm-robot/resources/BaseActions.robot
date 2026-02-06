@@ -35,13 +35,13 @@ Smart Input Text Once
 Smart Get Text
     [Arguments]    ${locator}    ${timeout}=${SMART_WAIT_TIMEOUT}
     ${value}=    Wait Until Keyword Succeeds    ${SMART_RETRY_COUNT}    ${SMART_RETRY_INTERVAL}    Smart Get Text Once    ${locator}    ${timeout}
-    [Return]    ${value}
+    RETURN    ${value}
 
 Smart Get Text Once
     [Arguments]    ${locator}    ${timeout}
     Smart Wait For Element    ${locator}    ${timeout}
     ${value}=    Get Text    ${locator}
-    [Return]    ${value}
+    RETURN    ${value}
 
 Smart Element Should Be Visible
     [Arguments]    ${locator}    ${timeout}=${SMART_WAIT_TIMEOUT}

@@ -1,96 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-06T15:53:29.728917" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-06T16:22:26.332437" rpa="false" schemaversion="5">
 <suite id="s1" name="MOJ task" source="D:\MOJ_task">
 <suite id="s1-s1" name="Orangehrm-Robot" source="D:\MOJ_task\orangehrm-robot">
 <suite id="s1-s1-s1" name="Tests" source="D:\MOJ_task\orangehrm-robot\tests">
 <suite id="s1-s1-s1-s1" name="Smoke" source="D:\MOJ_task\orangehrm-robot\tests\smoke">
 <suite id="s1-s1-s1-s1-s1" name="Employee" source="D:\MOJ_task\orangehrm-robot\tests\smoke\employee.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Create Employee" line="10">
+<test id="s1-s1-s1-s1-s1-t1" name="Create Employee" line="9">
 <kw name="Open Application" owner="Common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-06T15:53:30.112695" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<msg time="2026-02-06T16:22:26.709017" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-06T15:53:30.112340" elapsed="4.511516"/>
+<status status="PASS" start="2026-02-06T16:22:26.708659" elapsed="3.629719"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-06T15:53:34.624571" elapsed="0.038578"/>
+<status status="PASS" start="2026-02-06T16:22:30.338967" elapsed="0.030825"/>
 </kw>
-<status status="PASS" start="2026-02-06T15:53:30.111420" elapsed="4.551947"/>
+<status status="PASS" start="2026-02-06T16:22:26.707779" elapsed="3.662636"/>
 </kw>
 <kw name="Login As Admin" owner="LoginPage">
+<kw name="Smart Input Text" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Input Text Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.375824" elapsed="0.557952"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.934048" elapsed="0.019887"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.954198" elapsed="0.023879"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T16:22:30.375259" elapsed="0.603075"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.979458" elapsed="0.047317"/>
+</kw>
+<arg>${clear}</arg>
+<arg>Clear Element Text</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.978716" elapsed="0.048389"/>
+</kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T15:53:34.664755" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
-<msg time="2026-02-06T15:53:34.808671" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screens/selenium-screenshot-2.png"&gt;&lt;img src="screens/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-06T15:53:34.809328" level="FAIL">Element with locator 'name=username' not found.</msg>
+<msg time="2026-02-06T16:22:31.028055" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.027425" elapsed="0.077043"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<status status="PASS" start="2026-02-06T16:22:30.374739" elapsed="0.730092"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Input Text Once</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T16:22:30.373600" elapsed="0.731460"/>
+</kw>
 <arg>name=username</arg>
-<arg>admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2026-02-06T15:53:34.664295" elapsed="0.153031">Element with locator 'name=username' not found.</status>
+<arg>${user}</arg>
+<status status="PASS" start="2026-02-06T16:22:30.371852" elapsed="0.733445"/>
+</kw>
+<kw name="Smart Input Text" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Input Text Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.108165" elapsed="0.010573"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.119071" elapsed="0.019528"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.139002" elapsed="0.023259"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T16:22:31.107637" elapsed="0.054921"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.163339" elapsed="0.026611"/>
+</kw>
+<arg>${clear}</arg>
+<arg>Clear Element Text</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.162812" elapsed="0.027350"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>name=password</arg>
-<arg>admin123</arg>
+<msg time="2026-02-06T16:22:31.190748" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-06T15:53:34.817709" elapsed="0.000171"/>
+<status status="PASS" start="2026-02-06T16:22:31.190348" elapsed="0.076160"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<status status="PASS" start="2026-02-06T16:22:31.107060" elapsed="0.159633"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Input Text Once</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.106353" elapsed="0.160466"/>
+</kw>
+<arg>name=password</arg>
+<arg>${pass}</arg>
+<status status="PASS" start="2026-02-06T16:22:31.105695" elapsed="0.161260"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.270089" elapsed="0.010573"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.280939" elapsed="0.017042"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.298486" elapsed="0.021456"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T16:22:31.269131" elapsed="0.051049"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T16:22:31.320721" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.320364" elapsed="0.059387"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T16:22:31.268326" elapsed="0.111655"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T16:22:31.267593" elapsed="0.112535"/>
+</kw>
 <arg>css=button[type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-02-06T15:53:34.818036" elapsed="0.000110"/>
+<status status="PASS" start="2026-02-06T16:22:31.267155" elapsed="0.113206"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Dashboard</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-02-06T15:53:34.818290" elapsed="0.000100"/>
+<status status="PASS" start="2026-02-06T16:22:31.380542" elapsed="2.579811"/>
 </kw>
-<status status="FAIL" start="2026-02-06T15:53:34.663851" elapsed="0.154708">Element with locator 'name=username' not found.</status>
-</kw>
-<kw name="Create New Employee" owner="PIMPage">
-<status status="NOT RUN" start="2026-02-06T15:53:34.818972" elapsed="0.000156"/>
-</kw>
-<kw name="Verify Employee Created" owner="PIMPage">
-<status status="NOT RUN" start="2026-02-06T15:53:34.819382" elapsed="0.000119"/>
+<arg>admin</arg>
+<arg>admin123</arg>
+<status status="PASS" start="2026-02-06T16:22:30.371027" elapsed="3.589525"/>
 </kw>
 <kw name="Close Application" owner="Common" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-06T15:53:34.820203" elapsed="2.176108"/>
+<status status="PASS" start="2026-02-06T16:22:33.961626" elapsed="2.362467"/>
 </kw>
-<status status="PASS" start="2026-02-06T15:53:34.819861" elapsed="2.176668"/>
+<status status="PASS" start="2026-02-06T16:22:33.961124" elapsed="2.363169"/>
 </kw>
 <tag>smoke</tag>
-<status status="FAIL" start="2026-02-06T15:53:30.106293" elapsed="6.890545">Element with locator 'name=username' not found.</status>
+<status status="PASS" start="2026-02-06T16:22:26.701890" elapsed="9.622671"/>
 </test>
-<status status="FAIL" start="2026-02-06T15:53:29.807743" elapsed="7.199914"/>
+<status status="PASS" start="2026-02-06T16:22:26.397901" elapsed="9.931506"/>
 </suite>
-<status status="FAIL" start="2026-02-06T15:53:29.798181" elapsed="7.214603"/>
+<status status="PASS" start="2026-02-06T16:22:26.393754" elapsed="9.939228"/>
 </suite>
-<status status="FAIL" start="2026-02-06T15:53:29.793587" elapsed="7.224313"/>
+<status status="PASS" start="2026-02-06T16:22:26.385352" elapsed="9.955651"/>
 </suite>
-<status status="FAIL" start="2026-02-06T15:53:29.788564" elapsed="7.240192"/>
+<status status="PASS" start="2026-02-06T16:22:26.380722" elapsed="9.964671"/>
 </suite>
-<status status="FAIL" start="2026-02-06T15:53:29.734421" elapsed="7.299382"/>
+<status status="PASS" start="2026-02-06T16:22:26.338187" elapsed="10.010821"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">smoke</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="MOJ task" id="s1" pass="0" fail="1" skip="0">MOJ task</stat>
-<stat name="Orangehrm-Robot" id="s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot</stat>
-<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests</stat>
-<stat name="Smoke" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke</stat>
-<stat name="Employee" id="s1-s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke.Employee</stat>
+<stat name="MOJ task" id="s1" pass="1" fail="0" skip="0">MOJ task</stat>
+<stat name="Orangehrm-Robot" id="s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests</stat>
+<stat name="Smoke" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke</stat>
+<stat name="Employee" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke.Employee</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-02-06T15:53:30.083203" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\LoginPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
-<msg time="2026-02-06T15:53:30.091252" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\PIMPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T16:22:26.681768" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\resources\BaseActions.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T16:22:26.689229" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\LoginPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
 </errors>
 </robot>
