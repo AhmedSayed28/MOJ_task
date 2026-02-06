@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-06T15:53:29.728917" rpa="false" schemaversion="5">
+<suite id="s1" name="MOJ task" source="D:\MOJ_task">
+<suite id="s1-s1" name="Orangehrm-Robot" source="D:\MOJ_task\orangehrm-robot">
+<suite id="s1-s1-s1" name="Tests" source="D:\MOJ_task\orangehrm-robot\tests">
+<suite id="s1-s1-s1-s1" name="Smoke" source="D:\MOJ_task\orangehrm-robot\tests\smoke">
+<suite id="s1-s1-s1-s1-s1" name="Employee" source="D:\MOJ_task\orangehrm-robot\tests\smoke\employee.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Create Employee" line="10">
+<kw name="Open Application" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-06T15:53:30.112695" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-06T15:53:30.112340" elapsed="4.511516"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-06T15:53:34.624571" elapsed="0.038578"/>
+</kw>
+<status status="PASS" start="2026-02-06T15:53:30.111420" elapsed="4.551947"/>
+</kw>
+<kw name="Login As Admin" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T15:53:34.664755" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<msg time="2026-02-06T15:53:34.808671" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screens/selenium-screenshot-2.png"&gt;&lt;img src="screens/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-06T15:53:34.809328" level="FAIL">Element with locator 'name=username' not found.</msg>
+<arg>name=username</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-06T15:53:34.664295" elapsed="0.153031">Element with locator 'name=username' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>admin123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-06T15:53:34.817709" elapsed="0.000171"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-06T15:53:34.818036" elapsed="0.000110"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-02-06T15:53:34.818290" elapsed="0.000100"/>
+</kw>
+<status status="FAIL" start="2026-02-06T15:53:34.663851" elapsed="0.154708">Element with locator 'name=username' not found.</status>
+</kw>
+<kw name="Create New Employee" owner="PIMPage">
+<status status="NOT RUN" start="2026-02-06T15:53:34.818972" elapsed="0.000156"/>
+</kw>
+<kw name="Verify Employee Created" owner="PIMPage">
+<status status="NOT RUN" start="2026-02-06T15:53:34.819382" elapsed="0.000119"/>
+</kw>
+<kw name="Close Application" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-06T15:53:34.820203" elapsed="2.176108"/>
+</kw>
+<status status="PASS" start="2026-02-06T15:53:34.819861" elapsed="2.176668"/>
+</kw>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-02-06T15:53:30.106293" elapsed="6.890545">Element with locator 'name=username' not found.</status>
+</test>
+<status status="FAIL" start="2026-02-06T15:53:29.807743" elapsed="7.199914"/>
+</suite>
+<status status="FAIL" start="2026-02-06T15:53:29.798181" elapsed="7.214603"/>
+</suite>
+<status status="FAIL" start="2026-02-06T15:53:29.793587" elapsed="7.224313"/>
+</suite>
+<status status="FAIL" start="2026-02-06T15:53:29.788564" elapsed="7.240192"/>
+</suite>
+<status status="FAIL" start="2026-02-06T15:53:29.734421" elapsed="7.299382"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="MOJ task" id="s1" pass="0" fail="1" skip="0">MOJ task</stat>
+<stat name="Orangehrm-Robot" id="s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot</stat>
+<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests</stat>
+<stat name="Smoke" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke</stat>
+<stat name="Employee" id="s1-s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke.Employee</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-02-06T15:53:30.083203" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\LoginPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T15:53:30.091252" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\PIMPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+</errors>
+</robot>
