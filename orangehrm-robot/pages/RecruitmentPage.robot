@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ../resources/BaseActions.robot
+Resource   ../resources/Common.robot
 
 *** Variables ***
 ${RECRUITMENT_MENU}          xpath=//span[text()='Recruitment']
@@ -24,8 +25,10 @@ Navigate To Recruitment
     Smart Click    ${RECRUITMENT_MENU}
     Smart Element Should Be Visible    ${VACANCIES_TAB}
 
-Create Vacancy
-    [Arguments]    ${vacancy_name}    ${hiring_manager}    ${description}
+Create Vacancy From Data
+    ${vacancy_name}=    Get Test Data Value    vacancy    title
+    ${hiring_manager}=    Get Test Data Value    vacancy    hiringManager
+    ${description}=    Get Test Data Value    vacancy    description
     Navigate To Recruitment
     Smart Click    ${VACANCIES_TAB}
     Smart Click    ${ADD_BUTTON}
@@ -37,8 +40,11 @@ Create Vacancy
     Smart Click    ${SAVE_BUTTON}
     Smart Element Should Be Visible    ${SUCCESS_TOAST}
 
-Add Candidate
-    [Arguments]    ${first_name}    ${last_name}    ${email}    ${vacancy}
+Add Candidate From Data
+    ${first_name}=    Get Test Data Value    candidate    firstName
+    ${last_name}=     Get Test Data Value    candidate    lastName
+    ${email}=    Get Test Data Value    candidate    email
+    ${vacancy}=    Get Test Data Value    vacancy    title
     Navigate To Recruitment
     Smart Click    ${CANDIDATES_TAB}
     Smart Click    ${ADD_BUTTON}

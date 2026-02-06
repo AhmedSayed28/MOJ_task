@@ -9,16 +9,13 @@ Suite Teardown    Close Application
 
 *** Keywords ***
 Prepare Employee For Search
+    Load Test Data
     Open Application
-    Login As User    ${ADMIN_USER}    ${ADMIN_PASS}
-    ${first_name}=    Generate Unique Name    SearchFirst
-    ${last_name}=     Generate Unique Name    SearchLast
-    ${employee_id}=    Add Employee    ${first_name}    ${last_name}
-    ${full_name}=    Catenate    SEPARATOR=    ${first_name}    ${SPACE}    ${last_name}
-    Set Suite Variable    ${SEARCH_EMPLOYEE_NAME}    ${full_name}
+    Login As Admin
+    Add Employee From Data
 
 *** Test Cases ***
 Search Employee
     [Tags]    regression
-    Search Employee By Name    ${SEARCH_EMPLOYEE_NAME}
-    Verify Employee Appears In Results    ${SEARCH_EMPLOYEE_NAME}
+    Search Employee By Name From Data
+    Verify Employee Appears In Results From Data

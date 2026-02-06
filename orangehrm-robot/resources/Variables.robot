@@ -5,5 +5,4 @@ Library           Collections
 *** Variables ***
 ${URL}              https://opensource-demo.orangehrmlive.com/
 ${BROWSER}          chrome
-${ADMIN_USER}       Admin
-${ADMIN_PASS}       admin123
+${TEST_DATA_FILE}   ${CURDIR}/testdata.json
