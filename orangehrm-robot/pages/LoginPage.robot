@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ../resources/BaseActions.robot
+Resource   ../resources/Common.robot
 
 *** Variables ***
 ${LOGIN_USER_FIELD}        name=username
@@ -11,10 +12,19 @@ ${USER_DROPDOWN}           css=.oxd-userdropdown-tab
 ${LOGOUT_LINK}             xpath=//a[text()='Logout']
 
 *** Keywords ***
-Login As User
-    [Arguments]    ${user}    ${pass}
-    Smart Input Text    ${LOGIN_USER_FIELD}    ${user}
-    Smart Input Text    ${LOGIN_PASS_FIELD}    ${pass}
+Login As Admin
+    ${username}=    Get Test Data Value    admin    username
+    ${password}=    Get Test Data Value    admin    password
+    Smart Input Text    ${LOGIN_USER_FIELD}    ${username}
+    Smart Input Text    ${LOGIN_PASS_FIELD}    ${password}
+    Smart Click    ${LOGIN_BUTTON}
+    Smart Element Should Be Visible    ${DASHBOARD_HEADER}
+
+Login As System User
+    ${username}=    Get Test Data Value    user    username
+    ${password}=    Get Test Data Value    user    password
+    Smart Input Text    ${LOGIN_USER_FIELD}    ${username}
+    Smart Input Text    ${LOGIN_PASS_FIELD}    ${password}
     Smart Click    ${LOGIN_BUTTON}
     Smart Element Should Be Visible    ${DASHBOARD_HEADER}
 

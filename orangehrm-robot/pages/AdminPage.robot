@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ../resources/BaseActions.robot
+Resource   ../resources/Common.robot
 
 *** Variables ***
 ${ADMIN_MENU}               xpath=//span[text()='Admin']
@@ -19,8 +20,10 @@ Navigate To Admin
     Smart Click    ${ADMIN_MENU}
     Smart Element Should Be Visible    ${ADD_BUTTON}
 
-Create System User
-    [Arguments]    ${employee_name}    ${username}    ${password}
+Create System User From Data
+    ${employee_name}=    Get Employee Full Name From Data
+    ${username}=    Get Test Data Value    user    username
+    ${password}=    Get Test Data Value    user    password
     Navigate To Admin
     Smart Click    ${ADD_BUTTON}
     Smart Click    ${USER_ROLE_DROPDOWN}

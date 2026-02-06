@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ../resources/BaseActions.robot
+Resource   ../resources/Common.robot
 
 *** Variables ***
 ${PIM_MENU}                 xpath=//span[text()='PIM']
@@ -20,8 +21,9 @@ Navigate To PIM
     Smart Click    ${PIM_MENU}
     Smart Element Should Be Visible    ${ADD_EMPLOYEE_BUTTON}
 
-Add Employee
-    [Arguments]    ${first_name}    ${last_name}
+Add Employee From Data
+    ${first_name}=    Get Test Data Value    employee    firstName
+    ${last_name}=     Get Test Data Value    employee    lastName
     Navigate To PIM
     Smart Click    ${ADD_EMPLOYEE_BUTTON}
     Smart Input Text    ${FIRST_NAME_FIELD}    ${first_name}
@@ -31,14 +33,14 @@ Add Employee
     Smart Element Should Be Visible    ${PERSONAL_DETAILS_HEADER}
     RETURN    ${employee_id}
 
-Search Employee By Name
-    [Arguments]    ${employee_name}
+Search Employee By Name From Data
+    ${employee_name}=    Get Employee Full Name From Data
     Navigate To PIM
     Smart Click    ${EMPLOYEE_LIST_TAB}
     Smart Input Text    ${EMP_NAME_SEARCH_FIELD}    ${employee_name}
     Smart Click    ${SEARCH_BUTTON}
 
-Verify Employee Appears In Results
-    [Arguments]    ${employee_name}
+Verify Employee Appears In Results From Data
+    ${employee_name}=    Get Employee Full Name From Data
     ${result_name}=    Smart Get Text    ${RESULT_NAME_CELL}
     Should Contain    ${result_name}    ${employee_name}

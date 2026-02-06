@@ -75,7 +75,7 @@ robot -d results tests/smoke/employee.robot
 - **Page Object Model**: All locators and page behaviors live under `pages/`.
 - **Reusable keywords**: Shared actions and smart waits are in `resources/`.
 - **Explicit waits only**: `BaseActions.robot` wraps interactions with waits and retry handling.
-- **Dynamic data**: Unique names, emails, and usernames are generated at runtime.
+- **Data-driven**: Test data is loaded from `resources/testdata.json` and reused consistently across suites.
 - **Tags**: Smoke and regression tagging is enforced per test suite.
 - **Screenshots on failure**: Captures automatically to `results/screens/`.
 - **HTML reports**: Use `-d results` to generate `report.html` and `log.html`.

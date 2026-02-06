@@ -1,0 +1,24 @@
+{
+  "admin": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "employee": {
+    "firstName": "Ahmed",
+    "lastName": "Ghali"
+  },
+  "user": {
+    "username": "ahmed.qa",
+    "password": "Test@123"
+  },
+  "vacancy": {
+    "title": "QA Automation Engineer",
+    "description": "Automation testing vacancy for the QA team.",
+    "hiringManager": "Orange Test"
+  },
+  "candidate": {
+    "firstName": "Mona",
+    "lastName": "Hassan",
+    "email": "candidate@test.com"
+  }
+}
