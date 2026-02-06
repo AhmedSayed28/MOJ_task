@@ -1,80 +1,81 @@
-# OrangeHRM Robot Framework Tests
+# OrangeHRM Robot Framework Automation
+
+Production-ready Robot Framework project using SeleniumLibrary with a Page Object Model structure for the OrangeHRM demo application.
+
+## Application Under Test
+- URL: https://opensource-demo.orangehrmlive.com/
+- Admin user: `Admin / admin123`
 
 ## Project Structure
 
 ```
 orangehrm-robot/
-│
 ├── tests/
 │   ├── smoke/
 │   │   ├── employee.robot
 │   │   ├── vacancy.robot
 │   │   └── user.robot
-│   │
 │   └── regression/
 │       ├── search_employee.robot
 │       └── candidate.robot
-│
 ├── pages/
 │   ├── LoginPage.robot
 │   ├── PIMPage.robot
 │   ├── RecruitmentPage.robot
 │   └── AdminPage.robot
-│
 ├── resources/
+│   ├── BaseActions.robot
 │   ├── Common.robot
 │   └── Variables.robot
-│
 ├── results/
-│
 └── README.md
 ```
 
-## Description
-
-This is a Robot Framework test automation project for OrangeHRM application.
-
-### Directory Details
-
-- **tests/**: Contains all test suites organized by type
-  - **smoke/**: Smoke test cases
-  - **regression/**: Regression test cases
-  
-- **pages/**: Page Object Model files for different pages
-  
-- **resources/**: Reusable keywords and variables
-  - **Common.robot**: Common keywords
-  - **Variables.robot**: Global variables and constants
-  
-- **results/**: Test execution results and reports
-
-## Getting Started
+## Setup Instructions
 
 ### Prerequisites
-- Python 3.x
-- Robot Framework
-- Required libraries (as per your project needs)
+- Python 3.9+
+- Google Chrome browser
+- ChromeDriver that matches your Chrome version
 
-### Running Tests
+### Install Dependencies
 
 ```bash
-# Run all tests
-robot tests/
-
-# Run smoke tests
-robot tests/smoke/
-
-# Run regression tests
-robot tests/regression/
-
-# Run specific test file
-robot tests/smoke/employee.robot
+pip install robotframework seleniumlibrary
 ```
 
-### Generating Reports
+## Execution Commands
 
-Results are generated in the `results/` directory after test execution.
+Run all tests and generate HTML reports in `results/`:
 
-## Contributing
+```bash
+robot -d results tests/
+```
 
-Follow the page object model pattern when creating new tests and keywords.
+Run only smoke tests:
+
+```bash
+robot -d results -i smoke tests/
+```
+
+Run only regression tests:
+
+```bash
+robot -d results -i regression tests/
+```
+
+Run a single test suite:
+
+```bash
+robot -d results tests/smoke/employee.robot
+```
+
+## Framework Highlights
+
+- **Page Object Model**: All locators and page behaviors live under `pages/`.
+- **Reusable keywords**: Shared actions and smart waits are in `resources/`.
+- **Explicit waits only**: `BaseActions.robot` wraps interactions with waits and retry handling.
+- **Dynamic data**: Unique names, emails, and usernames are generated at runtime.
+- **Tags**: Smoke and regression tagging is enforced per test suite.
+- **Screenshots on failure**: Captures automatically to `results/screens/`.
+- **HTML reports**: Use `-d results` to generate `report.html` and `log.html`.

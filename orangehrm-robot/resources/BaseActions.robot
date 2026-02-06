@@ -43,6 +43,17 @@ Smart Get Text Once
     ${value}=    Get Text    ${locator}
     RETURN    ${value}
 
+Smart Get Value
+    [Arguments]    ${locator}    ${timeout}=${SMART_WAIT_TIMEOUT}
+    ${value}=    Wait Until Keyword Succeeds    ${SMART_RETRY_COUNT}    ${SMART_RETRY_INTERVAL}    Smart Get Value Once    ${locator}    ${timeout}
+    RETURN    ${value}
+
+Smart Get Value Once
+    [Arguments]    ${locator}    ${timeout}
+    Smart Wait For Element    ${locator}    ${timeout}
+    ${value}=    Get Element Attribute    ${locator}    value
+    RETURN    ${value}
+
 Smart Element Should Be Visible
     [Arguments]    ${locator}    ${timeout}=${SMART_WAIT_TIMEOUT}
     Wait Until Keyword Succeeds    ${SMART_RETRY_COUNT}    ${SMART_RETRY_INTERVAL}    Smart Element Should Be Visible Once    ${locator}    ${timeout}
