@@ -5,5 +5,5 @@ Library           Collections
 *** Variables ***
 ${URL}              https://opensource-demo.orangehrmlive.com/
 ${BROWSER}          chrome
-${ADMIN_USER}       admin
+${ADMIN_USER}       Admin
 ${ADMIN_PASS}       admin123
