@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-06T17:49:35.853281" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-06T19:15:34.120912" rpa="false" schemaversion="5">
 <suite id="s1" name="MOJ task" source="D:\MOJ_task">
 <suite id="s1-s1" name="Orangehrm-Robot" source="D:\MOJ_task\orangehrm-robot">
 <suite id="s1-s1-s1" name="Tests" source="D:\MOJ_task\orangehrm-robot\tests">
-<suite id="s1-s1-s1-s1" name="Regression" source="D:\MOJ_task\orangehrm-robot\tests\regression">
-<suite id="s1-s1-s1-s1-s1" name="Search Employee" source="D:\MOJ_task\orangehrm-robot\tests\regression\search_employee.robot">
-<kw name="Prepare Employee For Search" type="SETUP">
-<kw name="Load Test Data" owner="Common">
+<suite id="s1-s1-s1-s1" name="Smoke" source="D:\MOJ_task\orangehrm-robot\tests\smoke">
+<suite id="s1-s1-s1-s1-s1" name="Vacancy" source="D:\MOJ_task\orangehrm-robot\tests\smoke\vacancy.robot">
+<kw name="Load Test Data" owner="Common" type="SETUP">
 <kw name="Load Test Data File" owner="TestData">
-<msg time="2026-02-06T17:49:36.408538" level="INFO">${TEST_DATA} = {'admin': {'username': 'Admin', 'password': 'admin123'}, 'employee': {'firstName': 'Ahmed', 'lastName': 'Ghali'}, 'user': {'username': 'ahmed.qa', 'password': 'Test@123'}, 'vacancy': {'title': 'QA Aut...</msg>
+<msg time="2026-02-06T19:15:34.596849" level="INFO">${TEST_DATA} = {'admin': {'username': 'Admin', 'password': 'admin123'}, 'employee': {'firstName': 'Ahmed', 'lastName': 'Ghali'}, 'user': {'username': 'ahmed.qa', 'password': 'Test@123'}, 'vacancy': {'title': 'Senior...</msg>
 <arg>${TEST_DATA_FILE}</arg>
-<status status="PASS" start="2026-02-06T17:49:36.407313" elapsed="0.001432"/>
+<status status="PASS" start="2026-02-06T19:15:34.595028" elapsed="0.002157"/>
 </kw>
-<status status="PASS" start="2026-02-06T17:49:36.406533" elapsed="0.002384"/>
+<status status="PASS" start="2026-02-06T19:15:34.593478" elapsed="0.003928"/>
 </kw>
-<kw name="Open Application" owner="Common">
+<test id="s1-s1-s1-s1-s1-t1" name="Create Vacancy" line="13">
+<kw name="Open Application" owner="Common" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:36.409948" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<msg time="2026-02-06T19:15:34.602132" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-06T17:49:36.409599" elapsed="3.921725"/>
+<status status="PASS" start="2026-02-06T19:15:34.601783" elapsed="5.550937"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.331845" elapsed="0.047035"/>
+<status status="PASS" start="2026-02-06T19:15:40.153059" elapsed="0.054238"/>
 </kw>
 <kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:40.379471" level="INFO">Capture Page Screenshot will be run on failure.</msg>
+<msg time="2026-02-06T19:15:40.207833" level="INFO">Capture Page Screenshot will be run on failure.</msg>
 <arg>Capture Page Screenshot</arg>
 <doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.379169" elapsed="0.000658"/>
+<status status="PASS" start="2026-02-06T19:15:40.207550" elapsed="0.000631"/>
 </kw>
-<status status="PASS" start="2026-02-06T17:49:36.409120" elapsed="3.970890"/>
+<status status="PASS" start="2026-02-06T19:15:34.601326" elapsed="5.607010"/>
 </kw>
 <kw name="Login As Admin" owner="LoginPage">
 <kw name="Get Test Data Value" owner="Common">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:40.381849" level="INFO">${section_data} = {'username': 'Admin', 'password': 'admin123'}</msg>
+<msg time="2026-02-06T19:15:40.211696" level="INFO">${section_data} = {'username': 'Admin', 'password': 'admin123'}</msg>
 <var>${section_data}</var>
 <arg>${TEST_DATA}</arg>
 <arg>${section}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.381392" elapsed="0.000884"/>
+<status status="PASS" start="2026-02-06T19:15:40.210836" elapsed="0.001269"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:40.384547" level="INFO">${value} = Admin</msg>
+<msg time="2026-02-06T19:15:40.213615" level="INFO">${value} = Admin</msg>
 <var>${value}</var>
 <arg>${section_data}</arg>
 <arg>${key}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.383249" elapsed="0.002543"/>
+<status status="PASS" start="2026-02-06T19:15:40.212678" elapsed="0.001200"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:40.386493" elapsed="0.000597"/>
+<status status="PASS" start="2026-02-06T19:15:40.214193" elapsed="0.000488"/>
 </return>
-<msg time="2026-02-06T17:49:40.387560" level="INFO">${username} = Admin</msg>
+<msg time="2026-02-06T19:15:40.215118" level="INFO">${username} = Admin</msg>
 <var>${username}</var>
 <arg>admin</arg>
 <arg>username</arg>
-<status status="PASS" start="2026-02-06T17:49:40.380933" elapsed="0.007065"/>
+<status status="PASS" start="2026-02-06T19:15:40.209569" elapsed="0.006031"/>
 </kw>
 <kw name="Get Test Data Value" owner="Common">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:40.390027" level="INFO">${section_data} = {'username': 'Admin', 'password': 'admin123'}</msg>
+<msg time="2026-02-06T19:15:40.218304" level="INFO">${section_data} = {'username': 'Admin', 'password': 'admin123'}</msg>
 <var>${section_data}</var>
 <arg>${TEST_DATA}</arg>
 <arg>${section}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.389442" elapsed="0.000990"/>
+<status status="PASS" start="2026-02-06T19:15:40.217504" elapsed="0.001310"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:40.391441" level="INFO">${value} = admin123</msg>
+<msg time="2026-02-06T19:15:40.220203" level="INFO">${value} = admin123</msg>
 <var>${value}</var>
 <arg>${section_data}</arg>
 <arg>${key}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.390850" elapsed="0.000957"/>
+<status status="PASS" start="2026-02-06T19:15:40.219360" elapsed="0.001160"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:40.392037" elapsed="0.000231"/>
+<status status="PASS" start="2026-02-06T19:15:40.220692" elapsed="0.000184"/>
 </return>
-<msg time="2026-02-06T17:49:40.392504" level="INFO">${password} = admin123</msg>
+<msg time="2026-02-06T19:15:40.221168" level="INFO">${password} = admin123</msg>
 <var>${password}</var>
 <arg>admin</arg>
 <arg>password</arg>
-<status status="PASS" start="2026-02-06T17:49:40.388400" elapsed="0.004567"/>
+<status status="PASS" start="2026-02-06T19:15:40.216329" elapsed="0.005092"/>
 </kw>
 <kw name="Smart Input Text" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -97,48 +97,48 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.397993" elapsed="0.452447"/>
+<status status="PASS" start="2026-02-06T19:15:40.225355" elapsed="0.851252"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.850994" elapsed="0.021742"/>
+<status status="PASS" start="2026-02-06T19:15:41.077226" elapsed="0.023540"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.873121" elapsed="0.027708"/>
+<status status="PASS" start="2026-02-06T19:15:41.101179" elapsed="0.029137"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:40.396774" elapsed="0.504326"/>
+<status status="PASS" start="2026-02-06T19:15:40.224574" elapsed="0.906073"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.902337" elapsed="0.049821"/>
+<status status="PASS" start="2026-02-06T19:15:41.131950" elapsed="0.054739"/>
 </kw>
 <arg>${clear}</arg>
 <arg>Clear Element Text</arg>
 <arg>${locator}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.901413" elapsed="0.051004"/>
+<status status="PASS" start="2026-02-06T19:15:41.130960" elapsed="0.056148"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:40.953547" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<msg time="2026-02-06T19:15:41.188235" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.952806" elapsed="0.085401"/>
+<status status="PASS" start="2026-02-06T19:15:41.187504" elapsed="0.125174"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <arg>${timeout}</arg>
 <arg>${clear}</arg>
-<status status="PASS" start="2026-02-06T17:49:40.395694" elapsed="0.643342"/>
+<status status="PASS" start="2026-02-06T19:15:40.223537" elapsed="1.089613"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -148,11 +148,11 @@
 <arg>${timeout}</arg>
 <arg>${clear}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:40.394260" elapsed="0.645063"/>
+<status status="PASS" start="2026-02-06T19:15:40.222448" elapsed="1.091004"/>
 </kw>
 <arg>${LOGIN_USER_FIELD}</arg>
 <arg>${username}</arg>
-<status status="PASS" start="2026-02-06T17:49:40.393400" elapsed="0.646278"/>
+<status status="PASS" start="2026-02-06T19:15:40.221746" elapsed="1.092007"/>
 </kw>
 <kw name="Smart Input Text" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -162,48 +162,48 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.043860" elapsed="0.015545"/>
+<status status="PASS" start="2026-02-06T19:15:41.317398" elapsed="0.012592"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.060047" elapsed="0.017667"/>
+<status status="PASS" start="2026-02-06T19:15:41.330414" elapsed="0.015040"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.078147" elapsed="0.021662"/>
+<status status="PASS" start="2026-02-06T19:15:41.345940" elapsed="0.025731"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.043025" elapsed="0.057343"/>
+<status status="PASS" start="2026-02-06T19:15:41.316776" elapsed="0.055256"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Clear Element Text" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.101788" elapsed="0.027324"/>
+<status status="PASS" start="2026-02-06T19:15:41.373204" elapsed="0.029746"/>
 </kw>
 <arg>${clear}</arg>
 <arg>Clear Element Text</arg>
 <arg>${locator}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.100711" elapsed="0.028635"/>
+<status status="PASS" start="2026-02-06T19:15:41.372384" elapsed="0.030902"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:41.130361" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<msg time="2026-02-06T19:15:41.404135" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.129658" elapsed="0.096062"/>
+<status status="PASS" start="2026-02-06T19:15:41.403609" elapsed="0.075006"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${text}</arg>
 <arg>${timeout}</arg>
 <arg>${clear}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.042132" elapsed="0.184044"/>
+<status status="PASS" start="2026-02-06T19:15:41.315950" elapsed="0.163082"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -213,11 +213,11 @@
 <arg>${timeout}</arg>
 <arg>${clear}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.041220" elapsed="0.185090"/>
+<status status="PASS" start="2026-02-06T19:15:41.314950" elapsed="0.164230"/>
 </kw>
 <arg>${LOGIN_PASS_FIELD}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.040181" elapsed="0.186273"/>
+<status status="PASS" start="2026-02-06T19:15:41.314021" elapsed="0.165315"/>
 </kw>
 <kw name="Smart Click" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -227,33 +227,33 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.230748" elapsed="0.012805"/>
+<status status="PASS" start="2026-02-06T19:15:41.482153" elapsed="0.011104"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.243947" elapsed="0.014465"/>
+<status status="PASS" start="2026-02-06T19:15:41.493845" elapsed="0.028162"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.258808" elapsed="0.019771"/>
+<status status="PASS" start="2026-02-06T19:15:41.522313" elapsed="0.020893"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.229633" elapsed="0.049250"/>
+<status status="PASS" start="2026-02-06T19:15:41.481587" elapsed="0.062070"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:41.279823" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
+<msg time="2026-02-06T19:15:41.544421" level="INFO">Clicking element 'css=button[type='submit']'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.279188" elapsed="0.063677"/>
+<status status="PASS" start="2026-02-06T19:15:41.543936" elapsed="0.057834"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.228856" elapsed="0.114665"/>
+<status status="PASS" start="2026-02-06T19:15:41.481100" elapsed="0.121137"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -261,10 +261,10 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.227691" elapsed="0.116110"/>
+<status status="PASS" start="2026-02-06T19:15:41.480157" elapsed="0.122376"/>
 </kw>
 <arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.226876" elapsed="0.117288"/>
+<status status="PASS" start="2026-02-06T19:15:41.479576" elapsed="0.123292"/>
 </kw>
 <kw name="Smart Element Should Be Visible" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -274,33 +274,33 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.348125" elapsed="1.817158"/>
+<status status="PASS" start="2026-02-06T19:15:41.607272" elapsed="5.491121"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.165995" elapsed="0.017604"/>
+<status status="PASS" start="2026-02-06T19:15:47.098915" elapsed="0.017892"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.184012" elapsed="0.022079"/>
+<status status="PASS" start="2026-02-06T19:15:47.117161" elapsed="0.023617"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.347327" elapsed="1.859409"/>
+<status status="PASS" start="2026-02-06T19:15:41.606643" elapsed="5.534621"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:43.224431" level="INFO">Element 'xpath=//h6[text()='Dashboard']' is displayed.</msg>
+<msg time="2026-02-06T19:15:47.161865" level="INFO">Element 'xpath=//h6[text()='Dashboard']' is displayed.</msg>
 <arg>${locator}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.207244" elapsed="0.017723"/>
+<status status="PASS" start="2026-02-06T19:15:47.141760" elapsed="0.020668"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.346866" elapsed="1.878575"/>
+<status status="PASS" start="2026-02-06T19:15:41.605769" elapsed="5.557035"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -308,69 +308,103 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:41.346093" elapsed="1.879579"/>
+<status status="PASS" start="2026-02-06T19:15:41.604467" elapsed="5.558677"/>
 </kw>
 <arg>${DASHBOARD_HEADER}</arg>
-<status status="PASS" start="2026-02-06T17:49:41.345155" elapsed="1.880774"/>
+<status status="PASS" start="2026-02-06T19:15:41.603383" elapsed="5.560134"/>
 </kw>
-<status status="PASS" start="2026-02-06T17:49:40.380322" elapsed="2.845831"/>
+<status status="PASS" start="2026-02-06T19:15:40.208895" elapsed="6.954945"/>
 </kw>
-<kw name="Add Employee From Data" owner="PIMPage">
+<kw name="Create Vacancy From Data" owner="RecruitmentPage">
 <kw name="Get Test Data Value" owner="Common">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:43.228521" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
+<msg time="2026-02-06T19:15:47.166693" level="INFO">${section_data} = {'title': 'Senior QA Automation Engineer', 'description': 'Automation testing vacancy for the QA team.', 'hiringManager': 'Ahmed Ghali'}</msg>
 <var>${section_data}</var>
 <arg>${TEST_DATA}</arg>
 <arg>${section}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.227845" elapsed="0.000928"/>
+<status status="PASS" start="2026-02-06T19:15:47.166108" elapsed="0.000897"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:43.229875" level="INFO">${value} = Ahmed</msg>
+<msg time="2026-02-06T19:15:47.167977" level="INFO">${value} = Senior QA Automation Engineer</msg>
 <var>${value}</var>
 <arg>${section_data}</arg>
 <arg>${key}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.229111" elapsed="0.001003"/>
+<status status="PASS" start="2026-02-06T19:15:47.167392" elapsed="0.000779"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:43.230375" elapsed="0.000383"/>
+<status status="PASS" start="2026-02-06T19:15:47.168335" elapsed="0.000235"/>
 </return>
-<msg time="2026-02-06T17:49:43.231135" level="INFO">${first_name} = Ahmed</msg>
-<var>${first_name}</var>
-<arg>employee</arg>
-<arg>firstName</arg>
-<status status="PASS" start="2026-02-06T17:49:43.227199" elapsed="0.004388"/>
+<msg time="2026-02-06T19:15:47.168913" level="INFO">${vacancy_name} = Senior QA Automation Engineer</msg>
+<var>${vacancy_name}</var>
+<arg>vacancy</arg>
+<arg>title</arg>
+<status status="PASS" start="2026-02-06T19:15:47.165431" elapsed="0.003781"/>
 </kw>
 <kw name="Get Test Data Value" owner="Common">
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:43.233230" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
+<msg time="2026-02-06T19:15:47.172285" level="INFO">${section_data} = {'title': 'Senior QA Automation Engineer', 'description': 'Automation testing vacancy for the QA team.', 'hiringManager': 'Ahmed Ghali'}</msg>
 <var>${section_data}</var>
 <arg>${TEST_DATA}</arg>
 <arg>${section}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.232790" elapsed="0.000757"/>
+<status status="PASS" start="2026-02-06T19:15:47.170787" elapsed="0.002299"/>
 </kw>
 <kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:43.234438" level="INFO">${value} = Ghali</msg>
+<msg time="2026-02-06T19:15:47.174620" level="INFO">${value} = Ahmed Ghali</msg>
 <var>${value}</var>
 <arg>${section_data}</arg>
 <arg>${key}</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.233875" elapsed="0.000885"/>
+<status status="PASS" start="2026-02-06T19:15:47.173726" elapsed="0.001251"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:43.235186" elapsed="0.000457"/>
+<status status="PASS" start="2026-02-06T19:15:47.175281" elapsed="0.000456"/>
 </return>
-<msg time="2026-02-06T17:49:43.236118" level="INFO">${last_name} = Ghali</msg>
-<var>${last_name}</var>
-<arg>employee</arg>
-<arg>lastName</arg>
-<status status="PASS" start="2026-02-06T17:49:43.232086" elapsed="0.004508"/>
+<msg time="2026-02-06T19:15:47.176321" level="INFO">${hiring_manager} = Ahmed Ghali</msg>
+<var>${hiring_manager}</var>
+<arg>vacancy</arg>
+<arg>hiringManager</arg>
+<status status="PASS" start="2026-02-06T19:15:47.169695" elapsed="0.006906"/>
 </kw>
-<kw name="Navigate To PIM" owner="PIMPage">
+<kw name="Get Test Data Value" owner="Common">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-06T19:15:47.180164" level="INFO">${section_data} = {'title': 'Senior QA Automation Engineer', 'description': 'Automation testing vacancy for the QA team.', 'hiringManager': 'Ahmed Ghali'}</msg>
+<var>${section_data}</var>
+<arg>${TEST_DATA}</arg>
+<arg>${section}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-06T19:15:47.179448" elapsed="0.001134"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-02-06T19:15:47.182064" level="INFO">${value} = Automation testing vacancy for the QA team.</msg>
+<var>${value}</var>
+<arg>${section_data}</arg>
+<arg>${key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-02-06T19:15:47.181085" elapsed="0.001224"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-02-06T19:15:47.182568" elapsed="0.000691"/>
+</return>
+<msg time="2026-02-06T19:15:47.183628" level="INFO">${description} = Automation testing vacancy for the QA team.</msg>
+<var>${description}</var>
+<arg>vacancy</arg>
+<arg>description</arg>
+<status status="PASS" start="2026-02-06T19:15:47.177121" elapsed="0.007017"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2026-02-06T19:15:47.185877" level="INFO">${TIMESTAMP} = 20260206191547</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2026-02-06T19:15:47.185062" elapsed="0.001194"/>
+</kw>
+<kw name="Navigate To Recruitment" owner="RecruitmentPage">
 <kw name="Smart Click" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Smart Click Once" owner="BaseActions">
@@ -379,33 +413,33 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.240664" elapsed="0.014186"/>
+<status status="PASS" start="2026-02-06T19:15:47.194230" elapsed="0.013441"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.255419" elapsed="0.015187"/>
+<status status="PASS" start="2026-02-06T19:15:47.208071" elapsed="0.013309"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.270972" elapsed="0.019590"/>
+<status status="PASS" start="2026-02-06T19:15:47.221848" elapsed="0.021497"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:43.239894" elapsed="0.051034"/>
+<status status="PASS" start="2026-02-06T19:15:47.193202" elapsed="0.050721"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:43.292426" level="INFO">Clicking element 'xpath=//span[text()='PIM']'.</msg>
+<msg time="2026-02-06T19:15:47.245004" level="INFO">Clicking element 'xpath=//span[text()='Recruitment']'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.291510" elapsed="1.637818"/>
+<status status="PASS" start="2026-02-06T19:15:47.244342" elapsed="5.654816"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:43.239156" elapsed="1.690436"/>
+<status status="PASS" start="2026-02-06T19:15:47.192094" elapsed="5.707278"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -413,10 +447,10 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:43.238454" elapsed="1.691380"/>
+<status status="PASS" start="2026-02-06T19:15:47.190731" elapsed="5.708762"/>
 </kw>
-<arg>${PIM_MENU}</arg>
-<status status="PASS" start="2026-02-06T17:49:43.237838" elapsed="1.692132"/>
+<arg>${RECRUITMENT_MENU}</arg>
+<status status="PASS" start="2026-02-06T19:15:47.189651" elapsed="5.710003"/>
 </kw>
 <kw name="Smart Element Should Be Visible" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -426,33 +460,33 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:44.932605" elapsed="0.647905"/>
+<status status="PASS" start="2026-02-06T19:15:52.902073" elapsed="1.502779"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.580852" elapsed="0.015481"/>
+<status status="PASS" start="2026-02-06T19:15:54.405245" elapsed="0.013547"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.596686" elapsed="0.019381"/>
+<status status="PASS" start="2026-02-06T19:15:54.419259" elapsed="0.019768"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:44.931810" elapsed="0.684607"/>
+<status status="PASS" start="2026-02-06T19:15:52.901389" elapsed="1.538035"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:45.631590" level="INFO">Element 'xpath=//button[normalize-space()='Add']' is displayed.</msg>
+<msg time="2026-02-06T19:15:54.455295" level="INFO">Element 'xpath=//a[normalize-space()='Vacancies']' is displayed.</msg>
 <arg>${locator}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.616920" elapsed="0.015048"/>
+<status status="PASS" start="2026-02-06T19:15:54.439826" elapsed="0.015910"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:44.931179" elapsed="0.701206"/>
+<status status="PASS" start="2026-02-06T19:15:52.900946" elapsed="1.554991"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -460,250 +494,12 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:44.930595" elapsed="0.702326"/>
+<status status="PASS" start="2026-02-06T19:15:52.900338" elapsed="1.555727"/>
 </kw>
-<arg>${ADD_EMPLOYEE_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:44.930175" elapsed="0.703076"/>
+<arg>${VACANCIES_TAB}</arg>
+<status status="PASS" start="2026-02-06T19:15:52.899875" elapsed="1.556333"/>
 </kw>
-<status status="PASS" start="2026-02-06T17:49:43.237105" elapsed="2.396395"/>
-</kw>
-<kw name="Smart Click" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Click Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.636389" elapsed="0.007406"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.644179" elapsed="0.014548"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.659174" elapsed="0.019265"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:45.635648" elapsed="0.043050"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:45.679525" level="INFO">Clicking element 'xpath=//button[normalize-space()='Add']'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.679002" elapsed="0.873297"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:45.635169" elapsed="0.917629"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Click Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:45.634338" elapsed="0.918667"/>
-</kw>
-<arg>${ADD_EMPLOYEE_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:45.633820" elapsed="0.919445"/>
-</kw>
-<kw name="Smart Input Text" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Input Text Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:46.557313" elapsed="0.465917"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.024070" elapsed="0.017999"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.042764" elapsed="0.035419"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:46.556298" elapsed="0.522173"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.079783" elapsed="0.031963"/>
-</kw>
-<arg>${clear}</arg>
-<arg>Clear Element Text</arg>
-<arg>${locator}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.078815" elapsed="0.033208"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:47.113076" level="INFO">Typing text 'Ahmed' into text field 'name=firstName'.</msg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.112356" elapsed="0.098214"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<status status="PASS" start="2026-02-06T17:49:46.555430" elapsed="0.655653"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Input Text Once</arg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:46.554425" elapsed="0.656884"/>
-</kw>
-<arg>${FIRST_NAME_FIELD}</arg>
-<arg>${first_name}</arg>
-<status status="PASS" start="2026-02-06T17:49:46.553618" elapsed="0.657952"/>
-</kw>
-<kw name="Smart Input Text" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Input Text Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.217159" elapsed="0.023392"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.241116" elapsed="0.015472"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.257165" elapsed="0.016790"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.215062" elapsed="0.059185"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.275393" elapsed="0.026891"/>
-</kw>
-<arg>${clear}</arg>
-<arg>Clear Element Text</arg>
-<arg>${locator}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.274566" elapsed="0.027990"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:47.303650" level="INFO">Typing text 'Ghali' into text field 'name=lastName'.</msg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.302903" elapsed="0.077317"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.214097" elapsed="0.166621"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Input Text Once</arg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.212847" elapsed="0.168132"/>
-</kw>
-<arg>${LAST_NAME_FIELD}</arg>
-<arg>${last_name}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.211945" elapsed="0.169324"/>
-</kw>
-<kw name="Smart Get Value" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Get Value Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.387884" elapsed="0.010425"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.399356" elapsed="0.014706"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.414664" elapsed="0.017991"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.386538" elapsed="0.046659"/>
-</kw>
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:47.446917" level="INFO">${value} = 0418</msg>
-<var>${value}</var>
-<arg>${locator}</arg>
-<arg>value</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.433746" elapsed="0.013453"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:47.447634" elapsed="0.000233"/>
-</return>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.385441" elapsed="0.062588"/>
-</kw>
-<msg time="2026-02-06T17:49:47.448192" level="INFO">${value} = 0418</msg>
-<var>${value}</var>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Get Value Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.383146" elapsed="0.065198"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:47.448583" elapsed="0.000251"/>
-</return>
-<msg time="2026-02-06T17:49:47.449227" level="INFO">${employee_id} = 0418</msg>
-<var>${employee_id}</var>
-<arg>${EMPLOYEE_ID_FIELD}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.381729" elapsed="0.067899"/>
+<status status="PASS" start="2026-02-06T19:15:47.187852" elapsed="7.268473"/>
 </kw>
 <kw name="Smart Click" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -713,33 +509,33 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.453719" elapsed="0.010269"/>
+<status status="PASS" start="2026-02-06T19:15:54.460624" elapsed="0.007814"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.464570" elapsed="0.013353"/>
+<status status="PASS" start="2026-02-06T19:15:54.468752" elapsed="0.016497"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.478529" elapsed="0.020779"/>
+<status status="PASS" start="2026-02-06T19:15:54.485548" elapsed="0.018233"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.452557" elapsed="0.047285"/>
+<status status="PASS" start="2026-02-06T19:15:54.459665" elapsed="0.044343"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:47.501336" level="INFO">Clicking element 'xpath=//button[normalize-space()='Save']'.</msg>
+<msg time="2026-02-06T19:15:54.504602" level="INFO">Clicking element 'xpath=//a[normalize-space()='Vacancies']'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.500469" elapsed="0.138834"/>
+<status status="PASS" start="2026-02-06T19:15:54.504227" elapsed="3.928582"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.452007" elapsed="0.187809"/>
+<status status="PASS" start="2026-02-06T19:15:54.458690" elapsed="3.974515"/>
 </kw>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -747,472 +543,462 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.450971" elapsed="0.189095"/>
+<status status="PASS" start="2026-02-06T19:15:54.457490" elapsed="3.975946"/>
+</kw>
+<arg>${VACANCIES_TAB}</arg>
+<status status="PASS" start="2026-02-06T19:15:54.456581" elapsed="3.977112"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:15:58.437317" elapsed="1.922459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:00.360645" elapsed="0.025744"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:00.386904" elapsed="0.032768"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:15:58.436496" elapsed="1.983675"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:00.421364" level="INFO">Clicking element 'xpath=//button[normalize-space()='Add']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:00.420638" elapsed="3.923320"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:15:58.435720" elapsed="5.908543"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:15:58.434698" elapsed="5.909824"/>
+</kw>
+<arg>${ADD_BUTTON}</arg>
+<status status="PASS" start="2026-02-06T19:15:58.433962" elapsed="5.910850"/>
+</kw>
+<kw name="Smart Input Text" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Input Text Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:04.349123" elapsed="1.890611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.240201" elapsed="0.038592"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.279264" elapsed="0.084237"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:04.348433" elapsed="2.015553"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.365478" elapsed="0.055478"/>
+</kw>
+<arg>${clear}</arg>
+<arg>Clear Element Text</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.364405" elapsed="0.056947"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:06.429304" level="INFO">Typing text 'Senior QA Automation Engineer_20260206191547' into text field 'xpath=//label[text()='Vacancy Name']/../following-sibling::div/input'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.421787" elapsed="0.257117"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<status status="PASS" start="2026-02-06T19:16:04.347566" elapsed="2.331702"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Input Text Once</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:04.346397" elapsed="2.333142"/>
+</kw>
+<arg>${VACANCY_NAME_FIELD}</arg>
+<arg>${vacancy_name}_${TIMESTAMP}</arg>
+<status status="PASS" start="2026-02-06T19:16:04.345199" elapsed="2.334649"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.682762" elapsed="0.012059"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.695305" elapsed="0.015698"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.711343" elapsed="0.022614"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:06.682114" elapsed="0.052253"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:06.735390" level="INFO">Clicking element 'xpath=//label[text()='Job Title']/../following-sibling::div//div[contains(@class,'oxd-select-text')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.734760" elapsed="0.075431"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:06.681548" elapsed="0.129061"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.680873" elapsed="0.129979"/>
+</kw>
+<arg>${VACANCY_JOB_DROPDOWN}</arg>
+<status status="PASS" start="2026-02-06T19:16:06.680267" elapsed="0.130892"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.815718" elapsed="0.854704"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.670898" elapsed="0.021366"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.692936" elapsed="0.026604"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:06.814845" elapsed="0.905041"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:07.720557" level="INFO">Clicking element 'xpath=//div[@role='option']/span'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.720119" elapsed="0.075174"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:06.814051" elapsed="0.981466"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:06.812678" elapsed="0.982984"/>
+</kw>
+<arg>xpath=//div[@role='option']/span</arg>
+<status status="PASS" start="2026-02-06T19:16:06.811717" elapsed="0.984183"/>
+</kw>
+<kw name="Smart Input Text" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Input Text Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.799067" elapsed="0.013011"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.812474" elapsed="0.016373"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.829248" elapsed="0.021390"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:07.798573" elapsed="0.052324"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.851804" elapsed="0.029948"/>
+</kw>
+<arg>${clear}</arg>
+<arg>Clear Element Text</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.851178" elapsed="0.030896"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:07.882921" level="INFO">Typing text 'Ahmed Ghali' into text field 'xpath=//label[text()='Hiring Manager']/../following-sibling::div//input'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.882399" elapsed="0.099188"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<status status="PASS" start="2026-02-06T19:16:07.797988" elapsed="0.183965"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Input Text Once</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.797171" elapsed="0.185104"/>
+</kw>
+<arg>${VACANCY_MANAGER_FIELD}</arg>
+<arg>${hiring_manager}</arg>
+<status status="PASS" start="2026-02-06T19:16:07.796205" elapsed="0.186375"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.986568" elapsed="1.892746"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:09.879729" elapsed="0.014297"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:09.894439" elapsed="0.019899"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:07.985725" elapsed="1.928826"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:09.915080" level="INFO">Clicking element 'xpath=//div[@role='option']/span'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:09.914733" elapsed="0.083176"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:07.984805" elapsed="2.013434"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:07.983827" elapsed="2.014631"/>
+</kw>
+<arg>xpath=//div[@role='option']/span</arg>
+<status status="PASS" start="2026-02-06T19:16:07.983006" elapsed="2.015697"/>
+</kw>
+<kw name="Smart Input Text" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Input Text Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.003307" elapsed="0.029212"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.032842" elapsed="0.017517"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.050636" elapsed="0.025054"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:10.002402" elapsed="0.073669"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.077208" elapsed="0.083866"/>
+</kw>
+<arg>${clear}</arg>
+<arg>Clear Element Text</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.076408" elapsed="0.085026"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:10.162481" level="INFO">Typing text 'Automation testing vacancy for the QA team.' into text field 'xpath=//label[text()='Description']/../following-sibling::div/textarea'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.161785" elapsed="0.183260"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<status status="PASS" start="2026-02-06T19:16:10.001353" elapsed="0.343922"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Input Text Once</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+<arg>${clear}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.000040" elapsed="0.345371"/>
+</kw>
+<arg>${VACANCY_DESC_FIELD}</arg>
+<arg>${description}</arg>
+<status status="PASS" start="2026-02-06T19:16:09.999052" elapsed="0.346509"/>
+</kw>
+<kw name="Smart Click" owner="BaseActions">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Smart Click Once" owner="BaseActions">
+<kw name="Smart Wait For Element" owner="BaseActions">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.347922" elapsed="0.011109"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.359422" elapsed="0.012616"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.372347" elapsed="0.018573"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:10.347468" elapsed="0.043789"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-06T19:16:10.392099" level="INFO">Clicking element 'xpath=//button[normalize-space()='Save']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.391573" elapsed="0.059733"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<status status="PASS" start="2026-02-06T19:16:10.347013" elapsed="0.104644"/>
+</kw>
+<arg>${SMART_RETRY_COUNT}</arg>
+<arg>${SMART_RETRY_INTERVAL}</arg>
+<arg>Smart Click Once</arg>
+<arg>${locator}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-02-06T19:16:10.346304" elapsed="0.105595"/>
 </kw>
 <arg>${SAVE_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.449984" elapsed="0.190427"/>
+<status status="PASS" start="2026-02-06T19:16:10.345783" elapsed="0.106386"/>
 </kw>
-<kw name="Smart Element Should Be Visible" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Element Should Be Visible Once" owner="BaseActions">
 <kw name="Smart Wait For Element" owner="BaseActions">
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.642872" elapsed="5.656120"/>
+<status status="PASS" start="2026-02-06T19:16:10.453382" elapsed="9.362407"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.299788" elapsed="0.014864"/>
+<status status="PASS" start="2026-02-06T19:16:19.816218" elapsed="0.016406"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.315309" elapsed="0.018646"/>
+<status status="PASS" start="2026-02-06T19:16:19.832869" elapsed="0.021516"/>
 </kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.642173" elapsed="5.692108"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:53.349900" level="INFO">Element 'xpath=//h6[text()='Personal Details']' is displayed.</msg>
-<arg>${locator}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.334605" elapsed="0.016140"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.641771" elapsed="5.709485"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Element Should Be Visible Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:47.641185" elapsed="5.710324"/>
-</kw>
-<arg>${PERSONAL_DETAILS_HEADER}</arg>
-<status status="PASS" start="2026-02-06T17:49:47.640712" elapsed="5.711063"/>
-</kw>
-<return>
-<value>${employee_id}</value>
-<status status="PASS" start="2026-02-06T17:49:53.351941" elapsed="0.000267"/>
-</return>
-<status status="PASS" start="2026-02-06T17:49:43.226609" elapsed="10.125848"/>
-</kw>
-<status status="PASS" start="2026-02-06T17:49:36.406053" elapsed="16.946616"/>
-</kw>
-<test id="s1-s1-s1-s1-s1-t1" name="Search Employee" line="18">
-<kw name="Search Employee By Name From Data" owner="PIMPage">
-<kw name="Get Employee Full Name From Data" owner="Common">
-<kw name="Get Test Data Value" owner="Common">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:53.359903" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
-<var>${section_data}</var>
-<arg>${TEST_DATA}</arg>
-<arg>${section}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.359554" elapsed="0.000537"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:53.360614" level="INFO">${value} = Ahmed</msg>
-<var>${value}</var>
-<arg>${section_data}</arg>
-<arg>${key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.360285" elapsed="0.000567"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:53.361008" elapsed="0.000151"/>
-</return>
-<msg time="2026-02-06T17:49:53.361378" level="INFO">${first_name} = Ahmed</msg>
-<var>${first_name}</var>
-<arg>employee</arg>
-<arg>firstName</arg>
-<status status="PASS" start="2026-02-06T17:49:53.359169" elapsed="0.002490"/>
-</kw>
-<kw name="Get Test Data Value" owner="Common">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:53.363266" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
-<var>${section_data}</var>
-<arg>${TEST_DATA}</arg>
-<arg>${section}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.362763" elapsed="0.000748"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:53.364312" level="INFO">${value} = Ghali</msg>
-<var>${value}</var>
-<arg>${section_data}</arg>
-<arg>${key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.363734" elapsed="0.000841"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:53.364752" elapsed="0.000156"/>
-</return>
-<msg time="2026-02-06T17:49:53.365209" level="INFO">${last_name} = Ghali</msg>
-<var>${last_name}</var>
-<arg>employee</arg>
-<arg>lastName</arg>
-<status status="PASS" start="2026-02-06T17:49:53.362113" elapsed="0.003499"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2026-02-06T17:49:53.367714" level="INFO">${full_name} = Ahmed Ghali</msg>
-<var>${full_name}</var>
-<arg>SEPARATOR=</arg>
-<arg>${first_name}</arg>
-<arg>${SPACE}</arg>
-<arg>${last_name}</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.366233" elapsed="0.001846"/>
-</kw>
-<return>
-<value>${full_name}</value>
-<status status="PASS" start="2026-02-06T17:49:53.368350" elapsed="0.000203"/>
-</return>
-<msg time="2026-02-06T17:49:53.368855" level="INFO">${employee_name} = Ahmed Ghali</msg>
-<var>${employee_name}</var>
-<status status="PASS" start="2026-02-06T17:49:53.358732" elapsed="0.010444"/>
-</kw>
-<kw name="Navigate To PIM" owner="PIMPage">
-<kw name="Smart Click" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Click Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.374977" elapsed="0.011193"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.386604" elapsed="0.015429"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.402576" elapsed="0.021826"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:53.373784" elapsed="0.051106"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:53.426106" level="INFO">Clicking element 'xpath=//span[text()='PIM']'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.425312" elapsed="2.096888"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:53.372773" elapsed="2.149762"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Click Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:53.371377" elapsed="2.151326"/>
-</kw>
-<arg>${PIM_MENU}</arg>
-<status status="PASS" start="2026-02-06T17:49:53.370194" elapsed="2.152704"/>
-</kw>
-<kw name="Smart Element Should Be Visible" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Element Should Be Visible Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:55.526735" elapsed="0.866564"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.394020" elapsed="0.021536"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.416365" elapsed="0.023952"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:55.525983" elapsed="0.914589"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:56.454798" level="INFO">Element 'xpath=//button[normalize-space()='Add']' is displayed.</msg>
-<arg>${locator}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.440816" elapsed="0.014627"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:55.525091" elapsed="0.930691"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Element Should Be Visible Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:55.523963" elapsed="0.932058"/>
-</kw>
-<arg>${ADD_EMPLOYEE_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:55.523180" elapsed="0.933107"/>
-</kw>
-<status status="PASS" start="2026-02-06T17:49:53.369583" elapsed="3.086903"/>
-</kw>
-<kw name="Smart Click" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Click Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.459232" elapsed="0.010946"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.470520" elapsed="0.014996"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.485955" elapsed="0.018743"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:56.458711" elapsed="0.046257"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:56.505559" level="INFO">Clicking element 'xpath=//a[normalize-space()='Employee List']'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.505169" elapsed="0.953026"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:56.458164" elapsed="1.000367"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Click Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:56.457434" elapsed="1.001352"/>
-</kw>
-<arg>${EMPLOYEE_LIST_TAB}</arg>
-<status status="PASS" start="2026-02-06T17:49:56.456755" elapsed="1.002293"/>
-</kw>
-<kw name="Smart Input Text" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Input Text Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:57.463797" elapsed="0.510007"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:57.974239" elapsed="0.016118"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:57.990637" elapsed="0.018060"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:57.462801" elapsed="0.546111"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.009673" elapsed="0.028796"/>
-</kw>
-<arg>${clear}</arg>
-<arg>Clear Element Text</arg>
-<arg>${locator}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.009111" elapsed="0.029582"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:58.039340" level="INFO">Typing text 'Ahmed Ghali' into text field 'xpath=//label[text()='Employee Name']/../following-sibling::div//input'.</msg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.038895" elapsed="0.102153"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<status status="PASS" start="2026-02-06T17:49:57.461848" elapsed="0.679717"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Input Text Once</arg>
-<arg>${locator}</arg>
-<arg>${text}</arg>
-<arg>${timeout}</arg>
-<arg>${clear}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:57.460508" elapsed="0.681518"/>
-</kw>
-<arg>${EMP_NAME_SEARCH_FIELD}</arg>
-<arg>${employee_name}</arg>
-<status status="PASS" start="2026-02-06T17:49:57.459442" elapsed="0.683020"/>
-</kw>
-<kw name="Smart Click" owner="BaseActions">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Smart Click Once" owner="BaseActions">
-<kw name="Smart Wait For Element" owner="BaseActions">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.145495" elapsed="0.011585"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.157366" elapsed="0.014954"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${timeout}</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.172691" elapsed="0.017686"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.145012" elapsed="0.045592"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:58.191191" level="INFO">Clicking element 'xpath=//button[normalize-space()='Search']'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.190821" elapsed="0.062001"/>
-</kw>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.144575" elapsed="0.108482"/>
-</kw>
-<arg>${SMART_RETRY_COUNT}</arg>
-<arg>${SMART_RETRY_INTERVAL}</arg>
-<arg>Smart Click Once</arg>
-<arg>${locator}</arg>
-<arg>${timeout}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.143883" elapsed="0.109310"/>
-</kw>
-<arg>${SEARCH_BUTTON}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.142955" elapsed="0.110377"/>
-</kw>
-<status status="PASS" start="2026-02-06T17:49:53.358035" elapsed="4.895412"/>
-</kw>
-<kw name="Verify Employee Appears In Results From Data" owner="PIMPage">
-<kw name="Get Employee Full Name From Data" owner="Common">
-<kw name="Get Test Data Value" owner="Common">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:58.255411" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
-<var>${section_data}</var>
-<arg>${TEST_DATA}</arg>
-<arg>${section}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.255097" elapsed="0.000475"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:58.256056" level="INFO">${value} = Ahmed</msg>
-<var>${value}</var>
-<arg>${section_data}</arg>
-<arg>${key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.255751" elapsed="0.000560"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:58.256472" elapsed="0.000264"/>
-</return>
-<msg time="2026-02-06T17:49:58.256989" level="INFO">${first_name} = Ahmed</msg>
-<var>${first_name}</var>
-<arg>employee</arg>
-<arg>firstName</arg>
-<status status="PASS" start="2026-02-06T17:49:58.254753" elapsed="0.002413"/>
-</kw>
-<kw name="Get Test Data Value" owner="Common">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:58.258524" level="INFO">${section_data} = {'firstName': 'Ahmed', 'lastName': 'Ghali'}</msg>
-<var>${section_data}</var>
-<arg>${TEST_DATA}</arg>
-<arg>${section}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.257979" elapsed="0.000724"/>
-</kw>
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2026-02-06T17:49:58.259292" level="INFO">${value} = Ghali</msg>
-<var>${value}</var>
-<arg>${section_data}</arg>
-<arg>${key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.258895" elapsed="0.000609"/>
-</kw>
-<return>
-<value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:58.259632" elapsed="0.000153"/>
-</return>
-<msg time="2026-02-06T17:49:58.260047" level="INFO">${last_name} = Ghali</msg>
-<var>${last_name}</var>
-<arg>employee</arg>
-<arg>lastName</arg>
-<status status="PASS" start="2026-02-06T17:49:58.257534" elapsed="0.002790"/>
-</kw>
-<kw name="Catenate" owner="BuiltIn">
-<msg time="2026-02-06T17:49:58.261348" level="INFO">${full_name} = Ahmed Ghali</msg>
-<var>${full_name}</var>
-<arg>SEPARATOR=</arg>
-<arg>${first_name}</arg>
-<arg>${SPACE}</arg>
-<arg>${last_name}</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.260667" elapsed="0.001008"/>
-</kw>
-<return>
-<value>${full_name}</value>
-<status status="PASS" start="2026-02-06T17:49:58.261843" elapsed="0.000198"/>
-</return>
-<msg time="2026-02-06T17:49:58.262222" level="INFO">${employee_name} = Ahmed Ghali</msg>
-<var>${employee_name}</var>
-<status status="PASS" start="2026-02-06T17:49:58.254389" elapsed="0.007985"/>
+<arg>${ATTACHMENT_SECTION}</arg>
+<status status="PASS" start="2026-02-06T19:16:10.452553" elapsed="9.402093"/>
 </kw>
 <kw name="Smart Get Text" owner="BaseActions">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
@@ -1222,40 +1008,40 @@
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.266927" elapsed="0.686901"/>
+<status status="PASS" start="2026-02-06T19:16:19.859211" elapsed="0.017352"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.954137" elapsed="0.019343"/>
+<status status="PASS" start="2026-02-06T19:16:19.877637" elapsed="0.019689"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>timeout=${timeout}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.973787" elapsed="0.022845"/>
+<status status="PASS" start="2026-02-06T19:16:19.897797" elapsed="0.023562"/>
 </kw>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.265633" elapsed="0.731219"/>
+<status status="PASS" start="2026-02-06T19:16:19.857881" elapsed="0.063810"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-02-06T17:49:59.021586" level="INFO">${value} = A8DCo 4Ys</msg>
+<msg time="2026-02-06T19:16:19.946557" level="INFO">${value} = Edit Vacancy</msg>
 <var>${value}</var>
 <arg>${locator}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.997038" elapsed="0.024849"/>
+<status status="PASS" start="2026-02-06T19:16:19.922015" elapsed="0.024953"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:59.022094" elapsed="0.000207"/>
+<status status="PASS" start="2026-02-06T19:16:19.947356" elapsed="0.000236"/>
 </return>
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.264763" elapsed="0.757755"/>
+<status status="PASS" start="2026-02-06T19:16:19.857084" elapsed="0.090790"/>
 </kw>
-<msg time="2026-02-06T17:49:59.022781" level="INFO">${value} = A8DCo 4Ys</msg>
+<msg time="2026-02-06T19:16:19.948193" level="INFO">${value} = Edit Vacancy</msg>
 <var>${value}</var>
 <arg>${SMART_RETRY_COUNT}</arg>
 <arg>${SMART_RETRY_INTERVAL}</arg>
@@ -1263,71 +1049,68 @@
 <arg>${locator}</arg>
 <arg>${timeout}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="PASS" start="2026-02-06T17:49:58.263804" elapsed="0.759238"/>
+<status status="PASS" start="2026-02-06T19:16:19.855963" elapsed="0.092622"/>
 </kw>
 <return>
 <value>${value}</value>
-<status status="PASS" start="2026-02-06T17:49:59.023199" elapsed="0.000149"/>
+<status status="PASS" start="2026-02-06T19:16:19.948857" elapsed="0.000198"/>
 </return>
-<msg time="2026-02-06T17:49:59.023563" level="INFO">${result_name} = A8DCo 4Ys</msg>
-<var>${result_name}</var>
-<arg>${RESULT_NAME_CELL}</arg>
-<status status="PASS" start="2026-02-06T17:49:58.262817" elapsed="0.761020"/>
+<msg time="2026-02-06T19:16:19.949371" level="INFO">${new_form_title} = Edit Vacancy</msg>
+<var>${new_form_title}</var>
+<arg>${EDIT_FORM_TITLE}</arg>
+<status status="PASS" start="2026-02-06T19:16:19.855021" elapsed="0.094770"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<msg time="2026-02-06T17:49:59.024860" level="FAIL">'A8DCo 4Ys' does not contain 'Ahmed Ghali'</msg>
-<arg>${result_name}</arg>
-<arg>${employee_name}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="FAIL" start="2026-02-06T17:49:59.024060" elapsed="0.003945">'A8DCo 4Ys' does not contain 'Ahmed Ghali'</status>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${new_form_title}</arg>
+<arg>Edit Vacancy</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-02-06T19:16:19.950322" elapsed="0.001106"/>
 </kw>
-<status status="FAIL" start="2026-02-06T17:49:58.253846" elapsed="0.774448">'A8DCo 4Ys' does not contain 'Ahmed Ghali'</status>
+<status status="PASS" start="2026-02-06T19:15:47.164672" elapsed="32.787100"/>
 </kw>
-<tag>regression</tag>
-<status status="FAIL" start="2026-02-06T17:49:53.352842" elapsed="5.675958">'A8DCo 4Ys' does not contain 'Ahmed Ghali'</status>
-</test>
 <kw name="Close Application" owner="Common" type="TEARDOWN">
 <kw name="Run Keyword If Test Failed" owner="BuiltIn">
-<msg time="2026-02-06T17:49:59.039150" level="FAIL">Keyword 'Run Keyword If Test Failed' can only be used in test teardown.</msg>
 <arg>Capture Page Screenshot</arg>
 <doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<status status="FAIL" start="2026-02-06T17:49:59.038748" elapsed="0.003515">Keyword 'Run Keyword If Test Failed' can only be used in test teardown.</status>
+<status status="PASS" start="2026-02-06T19:16:19.953082" elapsed="0.000459"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-06T17:49:59.042610" elapsed="2.297452"/>
+<status status="PASS" start="2026-02-06T19:16:19.953737" elapsed="2.368500"/>
 </kw>
-<status status="FAIL" start="2026-02-06T17:49:59.038383" elapsed="2.301954">Keyword 'Run Keyword If Test Failed' can only be used in test teardown.</status>
+<status status="PASS" start="2026-02-06T19:16:19.952495" elapsed="2.370058"/>
 </kw>
-<status status="FAIL" start="2026-02-06T17:49:35.927180" elapsed="25.413325">Suite teardown failed:
-Keyword 'Run Keyword If Test Failed' can only be used in test teardown.</status>
+<tag>smoke</tag>
+<status status="PASS" start="2026-02-06T19:15:34.597550" elapsed="47.725404"/>
+</test>
+<status status="PASS" start="2026-02-06T19:15:34.200895" elapsed="48.129023"/>
 </suite>
-<status status="FAIL" start="2026-02-06T17:49:35.923145" elapsed="25.434519"/>
+<status status="PASS" start="2026-02-06T19:15:34.194246" elapsed="48.141316"/>
 </suite>
-<status status="FAIL" start="2026-02-06T17:49:35.915770" elapsed="25.446550"/>
+<status status="PASS" start="2026-02-06T19:15:34.189679" elapsed="48.151898"/>
 </suite>
-<status status="FAIL" start="2026-02-06T17:49:35.911456" elapsed="25.465121"/>
+<status status="PASS" start="2026-02-06T19:15:34.184964" elapsed="48.167627"/>
 </suite>
-<status status="FAIL" start="2026-02-06T17:49:35.859326" elapsed="25.522683"/>
+<status status="PASS" start="2026-02-06T19:15:34.126990" elapsed="48.230839"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="MOJ task" id="s1" pass="0" fail="1" skip="0">MOJ task</stat>
-<stat name="Orangehrm-Robot" id="s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot</stat>
-<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests</stat>
-<stat name="Regression" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Regression</stat>
-<stat name="Search Employee" id="s1-s1-s1-s1-s1" pass="0" fail="1" skip="0">MOJ task.Orangehrm-Robot.Tests.Regression.Search Employee</stat>
+<stat name="MOJ task" id="s1" pass="1" fail="0" skip="0">MOJ task</stat>
+<stat name="Orangehrm-Robot" id="s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests</stat>
+<stat name="Smoke" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke</stat>
+<stat name="Vacancy" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">MOJ task.Orangehrm-Robot.Tests.Smoke.Vacancy</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-02-06T17:49:36.375769" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\resources\BaseActions.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Regression.Search Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
-<msg time="2026-02-06T17:49:36.383309" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\LoginPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Regression.Search Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
-<msg time="2026-02-06T17:49:36.392046" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\PIMPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Regression.Search Employee' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T19:15:34.553453" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\resources\BaseActions.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Vacancy' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T19:15:34.561552" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\LoginPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Vacancy' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
+<msg time="2026-02-06T19:15:34.582360" level="WARN">Error in file 'D:\MOJ_task\orangehrm-robot\pages\RecruitmentPage.robot' on line 2: Suite 'MOJ task.Orangehrm-Robot.Tests.Smoke.Vacancy' has already imported library 'SeleniumLibrary' with different arguments. This import is ignored.</msg>
 </errors>
 </robot>

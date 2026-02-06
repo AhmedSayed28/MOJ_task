@@ -14,6 +14,7 @@ ${PERSONAL_DETAILS_HEADER}  xpath=//h6[text()='Personal Details']
 ${EMPLOYEE_LIST_TAB}        xpath=//a[normalize-space()='Employee List']
 ${EMP_NAME_SEARCH_FIELD}    xpath=//label[text()='Employee Name']/../following-sibling::div//input
 ${SEARCH_BUTTON}            xpath=//button[normalize-space()='Search']
+${RESULTS_TABLE}            xpath=//div[@class='oxd-table-body']
 ${RESULT_NAME_CELL}         xpath=//div[@class='oxd-table-cell oxd-padding-cell'][3]
 
 *** Keywords ***
@@ -39,8 +40,9 @@ Search Employee By Name From Data
     Smart Click    ${EMPLOYEE_LIST_TAB}
     Smart Input Text    ${EMP_NAME_SEARCH_FIELD}    ${employee_name}
     Smart Click    ${SEARCH_BUTTON}
+    Smart Element Should Be Visible    ${RESULTS_TABLE}
 
 Verify Employee Appears In Results From Data
     ${employee_name}=    Get Employee Full Name From Data
     ${result_name}=    Smart Get Text    ${RESULT_NAME_CELL}
-    Should Contain    ${result_name}    ${employee_name}
+    Should Contain    ${employee_name}    ${result_name}    

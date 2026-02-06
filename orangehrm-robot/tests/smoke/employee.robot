@@ -8,6 +8,7 @@ Suite Setup    Load Test Data
 Test Setup       Open Application
 Test Teardown    Close Application
 
+
 *** Test Cases ***
 Create Employee
     [Tags]    smoke

@@ -9,6 +9,7 @@ Suite Setup    Load Test Data
 Test Setup       Open Application
 Test Teardown    Close Application
 
+
 *** Test Cases ***
 Create System User And Login
     [Tags]    smoke

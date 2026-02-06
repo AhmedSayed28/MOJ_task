@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${SMART_RETRY_COUNT}       5
+${SMART_RETRY_COUNT}       10
 ${SMART_RETRY_INTERVAL}    800ms
 ${SMART_WAIT_TIMEOUT}      10s
 

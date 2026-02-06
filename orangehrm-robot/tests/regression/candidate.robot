@@ -5,7 +5,7 @@ Resource    ../../pages/LoginPage.robot
 Resource    ../../pages/RecruitmentPage.robot
 
 Suite Setup    Prepare Vacancy For Candidate
-Suite Teardown    Close Application
+Test Teardown    Close Application
 
 *** Keywords ***
 Prepare Vacancy For Candidate

@@ -35,3 +35,4 @@ Open Application
 Close Application
     Run Keyword If Test Failed    Capture Page Screenshot
     Close Browser
+

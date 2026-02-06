@@ -5,7 +5,8 @@ Resource    ../../pages/LoginPage.robot
 Resource    ../../pages/PIMPage.robot
 
 Suite Setup    Prepare Employee For Search
-Suite Teardown    Close Application
+Test Teardown    Close Application
+
 
 *** Keywords ***
 Prepare Employee For Search
