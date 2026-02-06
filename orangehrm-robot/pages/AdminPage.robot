@@ -29,7 +29,7 @@ Create System User From Data
     Smart Click    ${USER_ROLE_DROPDOWN}
     Smart Click    xpath=//div[@role='option']/span[normalize-space()='ESS']
     Smart Input Text    ${EMPLOYEE_NAME_FIELD}    ${employee_name}
-    Smart Click    xpath=//div[@role='listbox']//span[contains(@class,'oxd-text')][1]
+    Smart Click    css=div[role="listbox"] div[role="option"]:nth-child(1) span
     Smart Click    ${STATUS_DROPDOWN}
     Smart Click    xpath=//div[@role='option']/span[normalize-space()='Enabled']
     Smart Input Text    ${USERNAME_FIELD}    ${username}
