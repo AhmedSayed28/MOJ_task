@@ -20,6 +20,7 @@ ${VACANCY_NAME_FIELD}     xpath=(//input[@class='oxd-input oxd-input--active'])[
 ${VACANCY_JOB_DROPDOWN}   xpath=(//div[contains(@class,'oxd-select-text')])[1]
 ${VACANCY_MANAGER_FIELD}    css=[class="oxd-autocomplete-text-input oxd-autocomplete-text-input--active"] input
 ${VACANCY_DESC_FIELD}     css=textarea
+${VACANCY_DROPDOWN_OPTION}   xpath=//div[@role='option']/span
 
 # ===== SUCCESS TOAST =====
 ${SUCCESS_TOAST}          xpath=//div[contains(@class,'oxd-toast')]
@@ -54,9 +55,9 @@ Create Vacancy From Data
     Smart Click    ${ADD_BUTTON}
     Smart Input Text    ${VACANCY_NAME_FIELD}    ${vacancy_name}_${TIMESTAMP}
     Smart Click    ${VACANCY_JOB_DROPDOWN}
-    Smart Click    xpath=//div[@role='option']/span
+    Smart Click    ${VACANCY_DROPDOWN_OPTION}
     Smart Input Text    ${VACANCY_MANAGER_FIELD}    ${hiring_manager}
-    Smart Click    xpath=//div[@role='option']/span
+    Smart Click    ${VACANCY_DROPDOWN_OPTION}
     Smart Input Text    ${VACANCY_DESC_FIELD}    ${description}
     Smart Click    ${SAVE_BUTTON}
     Smart Wait For Element   ${ATTACHMENT_SECTION}
@@ -76,7 +77,7 @@ Add Candidate From Data
     Smart Input Text    ${CANDIDATE_LAST_NAME}    ${last_name}
     Smart Input Text    ${CANDIDATE_EMAIL}    ${email}
     Smart Click    ${VACANCY_JOB_DROPDOWN}
-    Smart Click    xpath=//div[@role='option']/span
+    Smart Click    ${VACANCY_DROPDOWN_OPTION}
     Choose File    ${CANDIDATE_RESUME_UPLOAD}    ${candidate_cv}
     Smart Click    ${SUBMIT_BUTTON}
     Smart Element Should Be Visible    ${SUCCESS_TOAST}

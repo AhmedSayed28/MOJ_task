@@ -15,6 +15,9 @@ ${PASSWORD_FIELD}           xpath=(//input[@type='password'])[1]
 ${CONFIRM_PASSWORD_FIELD}   xpath=(//input[@type='password'])[2]
 ${SAVE_BUTTON}              css=[class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 ${SUCCESS_TOAST}            xpath=//p[contains(@class,'oxd-text--toast-message')]
+${USER_DROPDOWN_OPTION}    xpath=//div[@role='option']/span[normalize-space()='ESS']
+${EMP_NAME_SUGGESTION}       css=div[role="listbox"] div[role="option"]:nth-child(1) span
+${STATUS_DROPDOWN_OPTION}    xpath=//div[@role='option']/span[normalize-space()='Enabled']    
 
 *** Keywords ***
 Navigate To Admin
@@ -29,11 +32,11 @@ Create System User From Data
     Navigate To Admin
     Smart Click    ${ADD_BUTTON}
     Smart Click    ${USER_ROLE_DROPDOWN}
-    Smart Click    xpath=//div[@role='option']/span[normalize-space()='ESS']
+    Smart Click    ${USER_DROPDOWN_OPTION}
     Smart Input Text    ${EMPLOYEE_NAME_FIELD}    ${employee_name}
-    Smart Click    css=div[role="listbox"] div[role="option"]:nth-child(1) span
+    Smart Click    ${EMP_NAME_SUGGESTION}
     Smart Click    ${STATUS_DROPDOWN}
-    Smart Click    xpath=//div[@role='option']/span[normalize-space()='Enabled']
+    Smart Click    ${STATUS_DROPDOWN_OPTION}
     ${generated_username}=    Catenate    ${username}_${TIMESTAMP}
     Smart Input Text    ${USERNAME_FIELD}    ${generated_username}
     Smart Input Text    ${PASSWORD_FIELD}    ${password}

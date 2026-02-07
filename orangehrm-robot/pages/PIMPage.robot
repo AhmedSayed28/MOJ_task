@@ -14,7 +14,7 @@ ${SAVE_BUTTON}              css=[class="oxd-button oxd-button--medium oxd-button
 ${PERSONAL_DETAILS_HEADER}  xpath=(//h6[@class="oxd-text oxd-text--h6 orangehrm-main-title"])[1]
 ${EMPLOYEE_LIST_TAB}        xpath=(//li[@class='oxd-topbar-body-nav-tab --visited'])[1]
 ${EMP_NAME_SEARCH_FIELD}    xpath=//div[@class="oxd-grid-4 orangehrm-full-width-grid"] //div[@class="oxd-grid-item oxd-grid-item--gutters"][1] //input
-${SEARCH_BUTTON}            xpath=button[type='submit']
+${SEARCH_BUTTON}            css=button[type='submit']
 ${RESULTS_TABLE}            xpath=//div[@class='oxd-table-body']
 ${RESULT_NAME_CELL}         xpath=//div[@class='oxd-table-cell oxd-padding-cell'][3]
 
