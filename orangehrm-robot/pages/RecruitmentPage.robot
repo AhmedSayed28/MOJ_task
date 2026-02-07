@@ -27,11 +27,14 @@ ${SUCCESS_TOAST}          xpath=//div[contains(@class,'oxd-toast')]
 # ===== CANDIDATE FORM =====
 ${CANDIDATE_FIRST_NAME}   name=firstName
 ${CANDIDATE_LAST_NAME}    name=lastName
-${CANDIDATE_EMAIL}        xpath=//input[@type='email']
+${CANDIDATE_EMAIL}        xpath=(//form[contains(@class,'oxd-form')]//input[contains(@class,'oxd-input') and not(@name)])[1]
 ${VACANCY_DROPDOWN}       xpath=(//div[contains(@class,'oxd-select-text')])[1]
+${CANDIDATE_RESUME_UPLOAD}  css=input[type='file']
+
 
 # ===== ATTACHMENT =====
 ${ATTACHMENT_SECTION}     xpath=//div[contains(@class,'orangehrm-attachment')]
+
 
 # ===== PAGE TITLES =====
 ${EDIT_FORM_TITLE}        css=h6.orangehrm-main-title
@@ -65,14 +68,15 @@ Add Candidate From Data
     ${first_name}=    Get Test Data Value    candidate    firstName
     ${last_name}=     Get Test Data Value    candidate    lastName
     ${email}=    Get Test Data Value    candidate    email
-    ${vacancy}=    Get Test Data Value    vacancy    title
+    ${candidate_cv}=    Get Test Data Value    candidate    CVPath
     Navigate To Recruitment
     Smart Click    ${CANDIDATES_TAB}
     Smart Click    ${ADD_BUTTON}
     Smart Input Text    ${CANDIDATE_FIRST_NAME}    ${first_name}
     Smart Input Text    ${CANDIDATE_LAST_NAME}    ${last_name}
     Smart Input Text    ${CANDIDATE_EMAIL}    ${email}
-    Smart Click    ${VACANCY_DROPDOWN}
-    Smart Click    xpath=//div[@role='option']/span[normalize-space()='${vacancy}']
+    Smart Click    ${VACANCY_JOB_DROPDOWN}
+    Smart Click    xpath=//div[@role='option']/span
+    Choose File    ${CANDIDATE_RESUME_UPLOAD}    ${candidate_cv}
     Smart Click    ${SUBMIT_BUTTON}
     Smart Element Should Be Visible    ${SUCCESS_TOAST}

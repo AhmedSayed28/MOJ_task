@@ -4,15 +4,15 @@ Resource   ../resources/BaseActions.robot
 Resource   ../resources/Common.robot
 
 *** Variables ***
-${ADMIN_MENU}               xpath=//span[text()='Admin']
-${ADD_BUTTON}               xpath=//button[normalize-space()='Add']
-${USER_ROLE_DROPDOWN}       xpath=//label[text()='User Role']/../following-sibling::div//div[contains(@class,'oxd-select-text')]
-${STATUS_DROPDOWN}          xpath=//label[text()='Status']/../following-sibling::div//div[contains(@class,'oxd-select-text')]
-${EMPLOYEE_NAME_FIELD}      xpath=//label[text()='Employee Name']/../following-sibling::div//input
-${USERNAME_FIELD}           xpath=//label[text()='Username']/../following-sibling::div/input
-${PASSWORD_FIELD}           xpath=//label[text()='Password']/../following-sibling::div/input
-${CONFIRM_PASSWORD_FIELD}   xpath=//label[text()='Confirm Password']/../following-sibling::div/input
-${SAVE_BUTTON}              xpath=//button[normalize-space()='Save']
+${ADMIN_MENU}               xpath=//a[contains(@href,'admin')]
+${ADD_BUTTON}               css=[class="oxd-button oxd-button--medium oxd-button--secondary"]
+${USER_ROLE_DROPDOWN}       css=[class="oxd-form-row"] [class="oxd-grid-item oxd-grid-item--gutters"]:nth-child(1) div[class="oxd-select-text oxd-select-text--active"]
+${STATUS_DROPDOWN}          css=[class="oxd-form-row"] [class="oxd-grid-item oxd-grid-item--gutters"]:nth-child(3) div[class="oxd-select-text oxd-select-text--active"]
+${EMPLOYEE_NAME_FIELD}      css=[class="oxd-autocomplete-text-input oxd-autocomplete-text-input--active"] input
+${USERNAME_FIELD}           css=[class="oxd-form-row"] [class="oxd-grid-item oxd-grid-item--gutters"]:nth-child(4) input
+${PASSWORD_FIELD}           xpath=(//input[@type='password'])[1]
+${CONFIRM_PASSWORD_FIELD}   xpath=(//input[@type='password'])[2]
+${SAVE_BUTTON}              css=[class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]
 ${SUCCESS_TOAST}            xpath=//p[contains(@class,'oxd-text--toast-message')]
 
 *** Keywords ***

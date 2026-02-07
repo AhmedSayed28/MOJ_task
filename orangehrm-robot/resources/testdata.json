@@ -19,6 +19,7 @@
   "candidate": {
     "firstName": "Mona",
     "lastName": "Hassan",
-    "email": "candidate@test.com"
+    "email": "candidate@test.com",
+    "CVPath": "D:\\MOJ_task\\orangehrm-robot\\resources\\Ahmed-Sayed-Ahmed.pdf"
   }
 }
