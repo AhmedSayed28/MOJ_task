@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary  screenshot_root_directory=results/screens
-Library    TestData.py
+Library    ../data/TestData.py
 Library    String
-Resource   Variables.robot
+Resource   ../variables/Variables.robot
 Resource   BaseActions.robot
 
 *** Variables ***
@@ -49,4 +49,3 @@ Open Application
 Close Application
     Run Keyword If Test Failed    Capture Page Screenshot
     Close Browser
-
