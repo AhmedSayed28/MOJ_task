@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    DateTime
 Resource   ../resources/BaseActions.robot
 Resource   ../resources/Common.robot
 
@@ -24,6 +25,7 @@ Create System User From Data
     ${employee_name}=    Get Employee Full Name From Data
     ${username}=    Get Test Data Value    user    username
     ${password}=    Get Test Data Value    user    password
+    ${TIMESTAMP}=    Get Current Date    result_format=%Y%m%d%H%M%S
     Navigate To Admin
     Smart Click    ${ADD_BUTTON}
     Smart Click    ${USER_ROLE_DROPDOWN}
@@ -32,8 +34,10 @@ Create System User From Data
     Smart Click    css=div[role="listbox"] div[role="option"]:nth-child(1) span
     Smart Click    ${STATUS_DROPDOWN}
     Smart Click    xpath=//div[@role='option']/span[normalize-space()='Enabled']
-    Smart Input Text    ${USERNAME_FIELD}    ${username}
+    ${generated_username}=    Catenate    ${username}_${TIMESTAMP}
+    Smart Input Text    ${USERNAME_FIELD}    ${generated_username}
     Smart Input Text    ${PASSWORD_FIELD}    ${password}
     Smart Input Text    ${CONFIRM_PASSWORD_FIELD}    ${password}
     Smart Click    ${SAVE_BUTTON}
     Smart Element Should Be Visible    ${SUCCESS_TOAST}
+    Set Created Username    ${generated_username}

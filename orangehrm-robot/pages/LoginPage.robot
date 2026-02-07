@@ -7,9 +7,9 @@ Resource   ../resources/Common.robot
 ${LOGIN_USER_FIELD}        name=username
 ${LOGIN_PASS_FIELD}        name=password
 ${LOGIN_BUTTON}            css=button[type='submit']
-${DASHBOARD_HEADER}        xpath=//h6[text()='Dashboard']
+${DASHBOARD_HEADER}        css=[class="oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module"]
 ${USER_DROPDOWN}           css=.oxd-userdropdown-tab
-${LOGOUT_LINK}             xpath=//a[text()='Logout']
+${LOGOUT_LINK}             xpath=//a[contains(@href,'logout')]
 
 *** Keywords ***
 Login As Admin
@@ -21,7 +21,8 @@ Login As Admin
     Smart Element Should Be Visible    ${DASHBOARD_HEADER}
 
 Login As System User
-    ${username}=    Get Test Data Value    user    username
+    ${created}=    Get Variable Value    ${CREATED_USERNAME}    ${EMPTY}
+    ${username}=    Run Keyword If    '${created}' != '${EMPTY}'    Set Variable    ${created}    ELSE    Get Test Data Value    user    username
     ${password}=    Get Test Data Value    user    password
     Smart Input Text    ${LOGIN_USER_FIELD}    ${username}
     Smart Input Text    ${LOGIN_PASS_FIELD}    ${password}

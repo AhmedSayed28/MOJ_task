@@ -5,6 +5,10 @@ Library    String
 Resource   Variables.robot
 Resource   BaseActions.robot
 
+*** Variables ***
+${CREATED_USERNAME}    ${EMPTY}
+${TEST_DATA}           ${EMPTY}
+
 *** Keywords ***
 Load Test Data
     Load Test Data File    ${TEST_DATA_FILE}
@@ -26,6 +30,16 @@ Get Candidate Full Name From Data
     ${last_name}=     Get Test Data Value    candidate    lastName
     ${full_name}=    Catenate    SEPARATOR=    ${first_name}    ${SPACE}    ${last_name}
     RETURN    ${full_name}
+
+Set Created Username
+    [Arguments]    ${username}
+    [Documentation]    Store the generated username as a Suite Variable for reuse in login tests
+    Set Suite Variable    ${CREATED_USERNAME}    ${username}
+
+Get Created Username
+    [Documentation]    Retrieve the stored username from Suite Variable. Returns the stored username if available, empty string otherwise.
+    ${username}=    Get Variable Value    ${CREATED_USERNAME}    ${EMPTY}
+    RETURN    ${username}
 
 Open Application
     Open Browser    ${URL}    ${BROWSER}
