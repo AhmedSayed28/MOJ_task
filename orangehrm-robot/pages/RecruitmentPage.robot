@@ -5,23 +5,36 @@ Resource   ../resources/BaseActions.robot
 Resource   ../resources/Common.robot
 
 *** Variables ***
-${RECRUITMENT_MENU}          xpath=//span[text()='Recruitment']
-${VACANCIES_TAB}             xpath=//a[normalize-space()='Vacancies']
-${CANDIDATES_TAB}            xpath=//a[normalize-space()='Candidates']
-${ADD_BUTTON}                xpath=//button[normalize-space()='Add']
-${VACANCY_NAME_FIELD}        xpath=//label[text()='Vacancy Name']/../following-sibling::div/input
-${VACANCY_JOB_DROPDOWN}      xpath=//label[text()='Job Title']/../following-sibling::div//div[contains(@class,'oxd-select-text')]
-${VACANCY_MANAGER_FIELD}     xpath=//label[text()='Hiring Manager']/../following-sibling::div//input
-${VACANCY_DESC_FIELD}        xpath=//label[text()='Description']/../following-sibling::div/textarea
-${SAVE_BUTTON}               xpath=//button[normalize-space()='Save']
-${SUCCESS_TOAST}             xpath=//div[@id="oxd-toaster_1"]
-${CANDIDATE_FIRST_NAME}      name=firstName
-${CANDIDATE_LAST_NAME}       name=lastName
-${CANDIDATE_EMAIL}           xpath=//label[text()='Email']/../following-sibling::div/input
-${VACANCY_DROPDOWN}           xpath=//label[text()='Vacancy']/../following-sibling::div//div[contains(@class,'oxd-select-text')]
-${ATTACHMENT_SECTION}           xpath=//div[@class="orangehrm-header-container orangehrm-attachment-header"]
-${SUBMIT_BUTTON}             xpath=//button[normalize-space()='Save']
-${EDIT_FORM_TITLE}             //h6[@class="oxd-text oxd-text--h6 orangehrm-main-title"]
+# ===== MENUS =====
+${RECRUITMENT_MENU}        xpath=//a[contains(@href,'recruitment')]
+${VACANCIES_TAB}          css=[class="oxd-topbar-body-nav-tab"] [class="oxd-topbar-body-nav-tab-item"] 
+${CANDIDATES_TAB}         xpath=(//input[@class='oxd-input oxd-input--active'])[1]
+
+# ===== COMMON BUTTONS =====
+${ADD_BUTTON}             css=[class="oxd-button oxd-button--medium oxd-button--secondary"]
+${SAVE_BUTTON}            css=button[type='submit']
+${SUBMIT_BUTTON}          css=button[type='submit']
+
+# ===== VACANCY FORM =====
+${VACANCY_NAME_FIELD}     xpath=(//input[@class='oxd-input oxd-input--active'])[2]
+${VACANCY_JOB_DROPDOWN}   xpath=(//div[contains(@class,'oxd-select-text')])[1]
+${VACANCY_MANAGER_FIELD}    css=[class="oxd-autocomplete-text-input oxd-autocomplete-text-input--active"] input
+${VACANCY_DESC_FIELD}     css=textarea
+
+# ===== SUCCESS TOAST =====
+${SUCCESS_TOAST}          xpath=//div[contains(@class,'oxd-toast')]
+
+# ===== CANDIDATE FORM =====
+${CANDIDATE_FIRST_NAME}   name=firstName
+${CANDIDATE_LAST_NAME}    name=lastName
+${CANDIDATE_EMAIL}        xpath=//input[@type='email']
+${VACANCY_DROPDOWN}       xpath=(//div[contains(@class,'oxd-select-text')])[1]
+
+# ===== ATTACHMENT =====
+${ATTACHMENT_SECTION}     xpath=//div[contains(@class,'orangehrm-attachment')]
+
+# ===== PAGE TITLES =====
+${EDIT_FORM_TITLE}        css=h6.orangehrm-main-title
 
 *** Keywords ***
 Navigate To Recruitment
