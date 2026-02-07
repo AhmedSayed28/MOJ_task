@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../resources/BaseActions.robot
-Resource   ../resources/Common.robot
+Resource   ../resources/keywords/BaseActions.robot
+Resource   ../resources/keywords/Common.robot
 
 *** Variables ***
 ${LOGIN_USER_FIELD}        name=username

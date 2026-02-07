@@ -24,9 +24,15 @@ orangehrm-robot/
 │   ├── RecruitmentPage.robot
 │   └── AdminPage.robot
 ├── resources/
-│   ├── BaseActions.robot
-│   ├── Common.robot
-│   └── Variables.robot
+│   ├── data/
+│   │   ├── testdata.json
+│   │   ├── TestData.py
+│   │   └── Ahmed-Sayed-Ahmed.pdf
+│   ├── keywords/
+│   │   ├── BaseActions.robot
+│   │   └── Common.robot
+│   └── variables/
+│       └── Variables.robot
 ├── results/
 └── README.md
 ```
@@ -73,9 +79,9 @@ robot -d results tests/smoke/employee.robot
 ## Framework Highlights
 
 - **Page Object Model**: All locators and page behaviors live under `pages/`.
-- **Reusable keywords**: Shared actions and smart waits are in `resources/`.
+- **Reusable keywords**: Shared actions and smart waits are in `resources/keywords/`.
 - **Explicit waits only**: `BaseActions.robot` wraps interactions with waits and retry handling.
-- **Data-driven**: Test data is loaded from `resources/testdata.json` and reused consistently across suites.
+- **Data-driven**: Test data is loaded from `resources/data/testdata.json` and reused consistently across suites.
 - **Tags**: Smoke and regression tagging is enforced per test suite.
 - **Screenshots on failure**: Captures automatically to `results/screens/`.
 - **HTML reports**: Use `-d results` to generate `report.html` and `log.html`.

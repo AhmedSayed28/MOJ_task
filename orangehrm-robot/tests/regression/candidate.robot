@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../../resources/Common.robot
-Resource    ../../resources/Variables.robot
+Resource    ../../resources/keywords/Common.robot
+Resource    ../../resources/variables/Variables.robot
 Resource    ../../pages/LoginPage.robot
 Resource    ../../pages/RecruitmentPage.robot
 

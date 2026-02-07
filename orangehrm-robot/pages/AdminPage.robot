@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    DateTime
-Resource   ../resources/BaseActions.robot
-Resource   ../resources/Common.robot
+Resource   ../resources/keywords/BaseActions.robot
+Resource   ../resources/keywords/Common.robot
 
 *** Variables ***
 ${ADMIN_MENU}               xpath=//a[contains(@href,'admin')]
